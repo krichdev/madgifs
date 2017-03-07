@@ -25,5 +25,6 @@ app.get('/', function(req, res){
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/story', require('./controllers/story'));
 
 app.listen(3000);
