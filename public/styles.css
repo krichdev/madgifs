@@ -1,3 +1,53 @@
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
 body {
   background-color: #1d1d1f;
+}
+
+header {
+  height: 200px;
+  width: 100%;
+  margin: 0;
+  background: url("img/madgif-header.png") no-repeat center;
+}
+
+h1, h3, p {
+  color: white;
+}
+
+.title {
+  font-size: 42px;
+}
+
+.user {
+  margin-top: 50px;
+}
+
+.signupBtn {
+  background-color: #1d1d1f;
+  border-color: #00aeef;
+  border-style: solid;
+  height: 50px;
+  width: 140px;
+}
+
+.loginBtn {
+  background-color: #00aeef;
+  border-color: #00aeef;
+  border-style: solid;
+  height: 50px;
+  width: 140px;
+  color: #1d1d1f;
+}
+
+a.signup {
+  text-decoration: none;
+  color: #00aeef;
+}
+
+a.login {
+  text-decoration: none;
+  color: #1d1d1f;
 }
