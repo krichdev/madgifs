@@ -3,7 +3,7 @@ var giphy = require('giphy-api')();
 var router = express.Router();
 
 router.get('/', function(req, res){
-  res.render('story');
+  res.render('madgif');
   // var q = req.query.gif;
   // giphy.search({
   //     q: q,
