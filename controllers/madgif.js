@@ -15,7 +15,8 @@ router.get('/story', function(req, res){
       rating: 'pg-13',
       limit: 1
     }, function(err, response) {
-      return response.data[0].images.downsized.url;
+      var tvGif = response.data[0].images.downsized.url;
+      callback(null, tvGif);
     });
   }
 
@@ -26,7 +27,8 @@ router.get('/story', function(req, res){
       rating: 'pg-13',
       limit: 1
     }, function(err, response) {
-      return response.data[0].images.downsized.url;
+      var celebGif = response.data[0].images.downsized.url;
+      callback(null, celebGif);
     });
   }
 
@@ -37,7 +39,8 @@ router.get('/story', function(req, res){
       rating: 'pg-13',
       limit: 1
     }, function(err, response) {
-      return response.data[0].images.downsized.url;
+      var reactionGif = response.data[0].images.downsized.url;
+      callback(null, reactionGif);
     });
   }
 
@@ -48,12 +51,13 @@ router.get('/story', function(req, res){
       rating: 'pg-13',
       limit: 1
     }, function(err, response) {
-      return response.data[0].images.downsized.url;
+      var emotionGif = response.data[0].images.downsized.url;
+      callback(null, emotionGif);
     });
   }
 
   async.series([tvShow, celeb, reaction, emotion], function(err, results) {
-    res.send(results);
+    console.log(results);
   });
 
 })
