@@ -11,45 +11,49 @@ router.get('/story', function(req, res){
   function tvShow(callback){
     var q = req.query.tvshow;
     giphy.search({
-      params
+      q: q,
+      rating: 'pg-13',
+      limit: 1
     }, function(err, response) {
-      data url
-      render to /story
+      return response.data[0].images.downsized.url;
     });
   }
 
   function celeb(callback){
     var q = req.query.celeb;
     giphy.search({
-      params
+      q: q,
+      rating: 'pg-13',
+      limit: 1
     }, function(err, response) {
-      data url
-      render to /story
+      return response.data[0].images.downsized.url;
     });
   }
 
   function reaction(callback){
     var q = req.query.reaction;
     giphy.search({
-      params
+      q: q,
+      rating: 'pg-13',
+      limit: 1
     }, function(err, response) {
-      data url
-      render to /story
+      return response.data[0].images.downsized.url;
     });
   }
 
   function emotion(callback){
     var q = req.query.emotion;
     giphy.search({
-      params
+      q: q,
+      rating: 'pg-13',
+      limit: 1
     }, function(err, response) {
-      data url
-      render to /story
+      return response.data[0].images.downsized.url;
     });
   }
 
-  async.waterfall([tvShow, celeb, reaction, emotion], function(err, results) {
-    
+  async.series([tvShow, celeb, reaction, emotion], function(err, results) {
+    res.send(results);
   });
 
 })
