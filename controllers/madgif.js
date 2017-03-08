@@ -2,6 +2,7 @@ var express = require('express');
 var giphy = require('giphy-api')();
 var async = require('async');
 var router = express.Router();
+var r = Math.floor((Math.random() * 25));
 
 router.get('/', function(req, res){
   res.render('madgif');
@@ -13,9 +14,9 @@ router.get('/story', function(req, res){
     giphy.search({
       q: q,
       rating: 'pg-13',
-      limit: 1
+      // limit: 1
     }, function(err, response) {
-      var tvGif = response.data[0].images.downsized.url;
+      var tvGif = response.data[r].images.downsized.url;
       callback(null, tvGif);
     });
   }
@@ -25,9 +26,9 @@ router.get('/story', function(req, res){
     giphy.search({
       q: q,
       rating: 'pg-13',
-      limit: 1
+      // limit: 1
     }, function(err, response) {
-      var celebGif = response.data[0].images.downsized.url;
+      var celebGif = response.data[r].images.downsized.url;
       callback(null, celebGif);
     });
   }
@@ -37,9 +38,9 @@ router.get('/story', function(req, res){
     giphy.search({
       q: q,
       rating: 'pg-13',
-      limit: 1
+      // limit: 1
     }, function(err, response) {
-      var reactionGif = response.data[0].images.downsized.url;
+      var reactionGif = response.data[r].images.downsized.url;
       callback(null, reactionGif);
     });
   }
@@ -49,9 +50,9 @@ router.get('/story', function(req, res){
     giphy.search({
       q: q,
       rating: 'pg-13',
-      limit: 1
+      // limit: 1
     }, function(err, response) {
-      var emotionGif = response.data[0].images.downsized.url;
+      var emotionGif = response.data[r].images.downsized.url;
       callback(null, emotionGif);
     });
   }
