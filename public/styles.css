@@ -37,7 +37,9 @@ h1, h3, p {
   width: 140px;
 }
 
-
+.gif-search {
+  margin-top: 75px;
+}
 
 .loginBtn {
   background-color: #00aeef;
