@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
           msg: "Password must be between 4 and 20 characters long"
         }
       }
-    },
+    }
 
   }, {
     hooks: {
