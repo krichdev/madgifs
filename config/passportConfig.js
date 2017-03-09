@@ -1,3 +1,4 @@
+require('dotenv').config();
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 var db = require('../models');
