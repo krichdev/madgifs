@@ -5,7 +5,7 @@ var flash = require('connect-flash');
 var router = express.Router();
 
 
-router.get('/', isLoggedIn, function(req, res){
+router.get('/', function(req, res){
   res.render('profile');
 });
 

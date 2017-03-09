@@ -8,7 +8,7 @@ router.get('/login', function(req, res){
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: "/"
+  successRedirect: "/profile"
 }));
 
 router.get('/signup', function(req, res){
@@ -25,7 +25,7 @@ router.post('/signup', function(req, res){
   }).spread(function(user, wasCreated){
     if(wasCreated){
       passport.authenticate('local', {
-        successRedirect: '/'
+        successRedirect: '/profile'
       })(req, res);
     } else {
       res.redirect('/auth/login')
