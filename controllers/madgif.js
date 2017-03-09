@@ -2,7 +2,7 @@ var express = require('express');
 var giphy = require('giphy-api')();
 var async = require('async');
 var router = express.Router();
-var r = Math.floor((Math.random() * 25));
+var r = Math.floor((Math.random() * 24));
 
 router.get('/', function(req, res){
   res.render('madgif');
