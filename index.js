@@ -3,6 +3,7 @@ var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var session = require('express-session')
+var flash = require('connect-flash');
 var passport = require('./config/passportConfig');
 var app = express();
 
@@ -15,6 +16,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(function(req, res, next){
   res.locals.currentUser = req.user;
@@ -27,5 +29,6 @@ app.get('/', function(req, res){
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/madgif', require('./controllers/madgif'));
+app.use('/profile', require('./controllers/profile'));
 
 app.listen(3000);

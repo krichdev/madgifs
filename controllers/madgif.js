@@ -1,5 +1,6 @@
 var express = require('express');
 var giphy = require('giphy-api')();
+var flash = require('connect-flash');
 var async = require('async');
 var router = express.Router();
 var r = Math.floor((Math.random() * 24));
