@@ -8,7 +8,10 @@ router.get('/login', function(req, res){
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: "/profile"
+  successRedirect: "/profile",
+  successFlash: "Logged In",
+  failureRedirect: "/",
+  failureFlash: "Invalid Username or Password"
 }));
 
 router.get('/signup', function(req, res){
@@ -25,18 +28,22 @@ router.post('/signup', function(req, res){
   }).spread(function(user, wasCreated){
     if(wasCreated){
       passport.authenticate('local', {
-        successRedirect: '/profile'
+        successRedirect: '/profile',
+        successFlash: "Account Created and Logged In"
       })(req, res);
     } else {
-      res.redirect('/auth/login')
+      req.flash("error", "Email already exists");
+      res.redirect('/auth/login');
     }
   }).catch(function(err){
-    res.redirect('/auth/signup')
+    req.flash("error", err.message);
+    res.redirect('/auth/signup');
   });
 });
 
 router.get('/logout', function(req, res){
   req.logout();
+  req.flash("success", "You have logged out");
   res.redirect('/');
 })
 
