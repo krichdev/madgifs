@@ -60,3 +60,13 @@ a.login {
   text-decoration: none;
   color: #1d1d1f;
 }
+
+.gifImg {
+  max-height: 348px;
+  max-width: 460px;
+}
+
+.favBtn {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
