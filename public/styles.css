@@ -39,7 +39,7 @@ h1, h3, p {
 }
 
 .gif-search {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .loginBtn {
@@ -69,4 +69,15 @@ a.login {
 .favBtn {
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+.form-control {
+  height: 75px;
+  font-size: 36px;
+}
+
+.up-btn {
+  height: 75px;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
