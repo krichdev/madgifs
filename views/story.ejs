@@ -17,7 +17,10 @@
     </div>
     <div class="col-sm-6 col-sm-offset-3">
       <form action="/profile" method="POST">
-          <input hidden type="text" name="favgif" value="<%= results %>">
+          <input hidden type="text" name="favTv" value="<%= results[0] %>">
+          <input hidden type="text" name="favCeleb" value="<%= results[1] %>">
+          <input hidden type="text" name="favReaction" value="<%= results[2] %>">
+          <input hidden type="text" name="favEmotion" value="<%= results[3] %>">
           <button class="btn btn-primary favBtn" type="submit">Favorite this Mad GIF!</button>
       </form>
     </div>

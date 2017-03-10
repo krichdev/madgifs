@@ -12,10 +12,14 @@ router.get('/', function(req, res){
 
 //POST favorite mad gif to user profile
 router.post('/', function(req, res){
-  console.log(req.body);
-  db.favorite.create(req.body).then(function(){
-    res.redirect('/profile')
-  })
+  var favTv = req.body.favTv;
+  var favCeleb = req.body.favCeleb;
+  var favReaction = req.body.favReaction;
+  var favEmotion = req.body.favEmotion;
+  res.send('Tv Show: ' + favTv);
+  // db.favorite.create(req.body).then(function(){
+  //   res.redirect('/profile')
+  // })
 });
 
 
