@@ -10,16 +10,24 @@ router.get('/', function(req, res){
   res.render('profile');
 });
 
-//POST favorite mad gif to user profile
+// POST favorite mad gif to user profile
 router.post('/', function(req, res){
   var favTv = req.body.favTv;
   var favCeleb = req.body.favCeleb;
   var favReaction = req.body.favReaction;
   var favEmotion = req.body.favEmotion;
-  res.send('Tv Show: ' + favTv);
-  // db.favorite.create(req.body).then(function(){
-  //   res.redirect('/profile')
-  // })
+  var currentUser = req.user.dataValues.id;
+
+
+  db.favoritegif.create({
+    tvGif: favTv,
+    reactionGif: favReaction,
+    celebGif: favCeleb,
+    emotionGif: favEmotion,
+    userId: currentUser
+  }).then(function(){
+    res.redirect('/profile')
+  })
 });
 
 

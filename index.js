@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session')
 var flash = require('connect-flash');
 var passport = require('./config/passportConfig');
+var isLoggedIn = require('./middleware/isLoggedIn');
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -30,7 +31,7 @@ app.get('/', function(req, res){
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/madgif', require('./controllers/madgif'));
-app.use('/profile', require('./controllers/profile'));
+app.use('/madgif', isLoggedIn, require('./controllers/madgif'));
+app.use('/profile', isLoggedIn, require('./controllers/profile'));
 
 app.listen(process.env.PORT || 3000);
