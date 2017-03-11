@@ -1,0 +1,39 @@
+<h1 class="text-center">Favorites!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <a href="/profile" class="btn btn-success btn-block">Profile</a>
+      <a href="/madgif" class="btn btn-primary btn-block">New Mad GIF!</a>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <h3 class="text-center">TV Shows</h3>
+    <% gifs.forEach(function(g){ %>
+      <img src="<%= g.tvGif %>" class="img-responsive center-block">
+      <hr>
+    <% }) %>
+  </div>
+  <div class="col-sm-3">
+    <h3 class="text-center">Celebrities</h3>
+    <% gifs.forEach(function(g){ %>
+      <img src="<%= g.celebGif %>" class="img-responsive center-block">
+      <hr>
+    <% }) %>
+  </div>
+  <div class="col-sm-3">
+    <h3 class="text-center">Reactions</h3>
+    <% gifs.forEach(function(g){ %>
+      <img src="<%= g.reactionGif %>" class="img-responsive center-block">
+      <hr>
+    <% }) %>
+  </div>
+  <div class="col-sm-3">
+    <h3 class="text-center">Emotions</h3>
+    <% gifs.forEach(function(g){ %>
+      <img src="<%= g.emotionGif %>" class="img-responsive center-block">
+      <hr>
+    <% }) %>
+  </div>
+</div>

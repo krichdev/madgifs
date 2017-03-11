@@ -1,26 +1,15 @@
 <div class="container">
-    <h1>Profile Page</h1>
+    <h1 class="text-center"><%= user.username %>'s Profile Page</h1>
     <hr>
-    <h3 class="text-center"><a href="/madgif">Create Mad GIF</a></h3>
-    <p>Username: </p>
-    <p>Email: </p>
-    <a href="/auth/logout" class="text-danger">Log Out</a>
-    <hr>
-    <h3>Favorite Mad GIFs</h3>
-        <div class="col-sm-6 col-sm-offset-3">
-          <h1>On a cold winter evening I sat with:</h1>
-          <img src="<%=  %>" class="gifImg img-responsive center-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <a href="/madgif" class="btn btn-primary btn-block">Create Mad GIF :)</a>
+          <a href="/profile/favorites" class="btn btn-success btn-block">View Favorites!</a>
+          <a href="/auth/logout" class="btn btn-danger btn-block">Log Out :(</a>
         </div>
-        <div class="col-sm-6 col-sm-offset-3">
-          <h1>We of course cuddled to stay warm as we binge watched:</h1>
-          <img src="<%=  %>" class="gifImg img-responsive center-block">
-        </div>
-        <div class="col-sm-6 col-sm-offset-3">
-          <h1>Hours felt like minutes and we were full of</h1>
-          <img src="<%=  %>" class="gifImg img-responsive center-block">
-        </div>
-        <div class="col-sm-6 col-sm-offset-3">
-          <h1>Night turned into day as we watched the finale and we were:</h1>
-          <img src="<%=  %>" class="gifImg img-responsive center-block">
-        </div>
+      </div>
+    </div>
+    <h3 class="text-center">Username: <%= user.username %></h3>
+    <h3 class="text-center">Email: <%= user.email %></h3>
 </div>
