@@ -56,6 +56,7 @@ router.get('/story', function(req, res){
 
   async.series([tvShow, celeb, reaction, emotion], function(err, results) {
     res.render('story', {results: results});
+    console.log(results);
   });
 
 })
